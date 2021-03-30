@@ -10,7 +10,7 @@ PORT = 65432        # The port used by the server
 
 print("Sou o Cliente")
 
-with open('teste.txt', 'rb') as f: 
+with open('arquivosTest/teste.txt', 'rb') as f: 
     dado = f.read() 
     
 #for i in range(len(dado)):    
