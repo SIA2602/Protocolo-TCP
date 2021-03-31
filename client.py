@@ -10,17 +10,18 @@ PORT = 65432        # The port used by the server
 
 print("Sou o Cliente")
 
-with open('arquivosTest/teste.txt', 'rb') as f: 
-    dado = f.read() 
-    
-#for i in range(len(dado)):    
-#    print(dado[i])
+file= open("arquivosTest/teste.txt", "r", encoding="utf-8") 
+dado = file.read()
+
+print(len(dado))    
+for i in range(len(dado)):    
+    print(dado[i])
 
 mesageOut = []
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     for i in range(len(dado)):          
-        s.sendall(chr(dado[i]).encode('utf-8'))           
+        s.sendall(bytes(dado[i], encoding="oem"))           
         data = s.recv(1024)        
         mesageOut.append(data)        
 
