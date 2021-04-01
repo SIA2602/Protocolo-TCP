@@ -14,11 +14,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     with conn:
         print('Connected by', addr)
         while True:
-            data = conn.recv(1024)             
-            #mesageOut+=data.decode('oem')     
-            #print(mesageOut)  
-            #print(str.encode(mesageOut))                 
-            #print(data.decode('oem'))            
+            data = conn.recv(1024)      
+            print(data.decode('oem'))            
             if not data:
                 break                       
             conn.sendall(data)
