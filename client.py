@@ -7,7 +7,7 @@ PORT = 65432        # The port used by the server
 
 print("Sou o Cliente")
 
-file= open("arquivosTest/teste.txt", "r", encoding="utf-8") 
+file= open("arquivosTest/GRUPO6.txt", "r", encoding="utf-8") 
 dado = file.read()
 
 #print(len(dado))    
